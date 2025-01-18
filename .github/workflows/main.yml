@@ -21,7 +21,7 @@ jobs:
       - name: Construção e Envio da imagem Docker - Build and push
         uses: docker/build-push-action@v6
         with:
-            context: .
+            context: ./src
             push: true
             file: ./src/Dockerfile
             tags: 
