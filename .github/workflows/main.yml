@@ -1,5 +1,4 @@
 name: CI-CD
-
 on:
   push:
     branches: ["main"]
@@ -24,3 +23,4 @@ jobs:
           run: echo "Executando comando aws eks update kubeconfig"
         - name: Deploy dos manifestos no Kubernetes
           run: echo "Executando comando kubectl apply"
+    
