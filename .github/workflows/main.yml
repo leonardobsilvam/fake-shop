@@ -16,10 +16,11 @@ jobs:
         run: echo "Executando comando Docker push"
   cd:
     runs-on: ubuntu-latest
-        steps:
-          - name: Autenticar na AWS
-            run: echo "Executando o comando aws configure"
-          - name: Configurar o Kubectl
-            run: echo "Executar o comando aws eks update-kubeconfig"
-          - name: Deploy dos manifestos do Kubernetes
-            run: echo "Executando o comando kubectl apply"
+    needs: [ci]
+    steps:
+      - name: Autenticar na AWS
+        run: echo "Executando o comando aws configure"
+      - name: Configurar o Kubectl
+        run: echo "Executar o comando aws eks update-kubeconfig"
+      - name: Deploy dos manifestos do Kubernetes
+        run: echo "Executando o comando kubectl apply"
